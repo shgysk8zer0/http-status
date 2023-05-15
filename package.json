@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/http-status",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple module for HTTP status codes",
   "type": "module",
   "module": "http-status.js",
