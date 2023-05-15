@@ -1,0 +1,36 @@
+{
+  "name": "@shgysk8zer0/http-status",
+  "version": "1.0.0",
+  "description": "A simple module for HTTP status codes",
+  "type": "module",
+  "module": "http-status.js",
+  "main": "http-status.js",
+  "scripts": {
+    "test": "npm run lint:js",
+    "preversion": "npm test",
+    "lint:js": "eslint .",
+    "fix:js": "eslint. --fix",
+    "create:lock": "npm i --package-lock-only",
+    "version:bump": "npm run version:bump:patch",
+    "version:bump:patch": "npm version --no-git-tag-version patch",
+    "version:bump:minor": "npm version --no-git-tag-version minor",
+    "version:bump:major": "npm version --no-git-tag-version major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shgysk8zer0/http-status.git"
+  },
+  "keywords": [
+    "http",
+    "status-codes"
+  ],
+  "author": "Chris Zuber <admin@kernvalley.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shgysk8zer0/http-status/issues"
+  },
+  "homepage": "https://github.com/shgysk8zer0/http-status#readme",
+  "devDependencies": {
+    "eslint": "^8.40.0"
+  }
+}
