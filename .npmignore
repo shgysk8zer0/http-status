@@ -10,7 +10,9 @@ test/
 .nvmrc
 importmap.json
 importmap.yaml
-rollup.config.js
+*.config.js
 *.tgz
 *.log
 *.out.js
+*.min.js
+*.map
