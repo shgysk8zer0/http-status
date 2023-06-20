@@ -39,6 +39,6 @@ npm i @shgysk8zer0/http-status
 ```js
 import { status } from '@shgysk8zer0/http-status';
 // or
-import { status } from 'https://unpkg.com/@shgysk8zer0@0.0.1/http-status.js';
+import { status } from 'https://unpkg.com/@shgysk8zer0@1.0.2/http-status.js';
 console.log(status.OK); // 200
 ```

@@ -1,13 +1,22 @@
 {
   "name": "@shgysk8zer0/http-status",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple module for HTTP status codes",
   "type": "module",
   "module": "http-status.js",
-  "main": "http-status.js",
+  "main": "http-status.cjs",
+  "exports": {
+    "./*": {
+      "import": "./http-status.js",
+      "require": "./http-status.cjs"
+    }
+  },
   "scripts": {
     "test": "npm run lint:js",
     "preversion": "npm test",
+    "prepare": "npm run build",
+    "build": "npm run build:js",
+    "build:js": "rollup -c rollup.config.js",
     "lint:js": "eslint .",
     "fix:js": "eslint. --fix",
     "create:lock": "npm i --package-lock-only",
@@ -31,6 +40,6 @@
   },
   "homepage": "https://github.com/shgysk8zer0/http-status#readme",
   "devDependencies": {
-    "eslint": "^8.40.0"
+    "@shgysk8zer0/js-utils": "^1.0.0"
   }
 }
