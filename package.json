@@ -1,12 +1,13 @@
 {
   "name": "@shgysk8zer0/http-status",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A simple module for HTTP status codes",
   "type": "module",
   "module": "http-status.js",
   "main": "http-status.cjs",
+  "unpkg": "./http-status.js",
   "exports": {
-    "./*": {
+    ".": {
       "import": "./http-status.js",
       "require": "./http-status.cjs"
     }
@@ -19,11 +20,11 @@
     "build:js": "rollup -c rollup.config.js",
     "lint:js": "eslint .",
     "fix:js": "eslint. --fix",
-    "create:lock": "npm i --package-lock-only",
+    "create:lock": "npm i --package-lock-only --ignore-scripts --no-audit --no-fund",
     "version:bump": "npm run version:bump:patch",
-    "version:bump:patch": "npm version --no-git-tag-version patch",
-    "version:bump:minor": "npm version --no-git-tag-version minor",
-    "version:bump:major": "npm version --no-git-tag-version major"
+    "version:bump:patch": "npm version --no-git-tag-version patch && npm run create:lock",
+    "version:bump:minor": "npm version --no-git-tag-version minor && npm run create:lock",
+    "version:bump:major": "npm version --no-git-tag-version major && npm run create:lock"
   },
   "repository": {
     "type": "git",
@@ -35,11 +36,21 @@
   ],
   "author": "Chris Zuber <admin@kernvalley.us>",
   "license": "MIT",
+  "funding": [
+    {
+      "type": "librepay",
+      "url": "https://liberapay.com/shgysk8zer0"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/shgysk8zer0"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/shgysk8zer0/http-status/issues"
   },
   "homepage": "https://github.com/shgysk8zer0/http-status#readme",
   "devDependencies": {
-    "@shgysk8zer0/js-utils": "^1.0.0"
+    "@shgysk8zer0/js-utils": "^1.0.1"
   }
 }
