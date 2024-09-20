@@ -36,14 +36,36 @@ export const status = {
 	'NETWORK_AUTHENTICATION_REQUIRED': 511,
 };
 
+/**
+ *
+ * @param {string} text The status text
+ * @param {number} [fallback=500] Fallback status to return if not found
+ * @returns {number} The status code corresponding to the given status text
+ */
 export function getStatus(text, fallback = status.INTERNAL_SERVER_ERROR) {
 	return status[text.toUpperCase()] || fallback;
 }
 
-export function getStatusType(code) {
+/**
+ *
+ * @param {number} code The status code to get the status text for
+ * @returns {string} The status text if found, emptystring otherwise
+ */
+export function getStatusText(code) {
 	const index = Object.values(status).findIndex(status => status === code);
 
 	if (index !== -1) {
 		return Object.keys(status)[index];
+	} else {
+		return '';
 	}
+}
+
+/**
+ *
+ * @deprecated
+ */
+export function getStatusType(code) {
+	console.warn('`getStatusType` is deprecated. Please use `getStatusText` instead.');
+	return getStatusText(code);
 }
