@@ -18,8 +18,8 @@
   },
   "scripts": {
     "test": "npm run lint:js && npm run run:tests",
-    "preversion": "npm test",
-    "prepare": "npm run build",
+    "preversion": "npm test && npm run build",
+    "prepare": "npm test && npm run build",
     "build": "npm run build:js",
     "build:js": "rollup -c rollup.config.js",
     "lint:js": "eslint .",
