@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 export const status = {
 	'CONTINUE': 100,
 
